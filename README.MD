@@ -11,7 +11,7 @@ This userscript simply adds a button on the right side of the ecosia search bar 
 ## How to install it?
 
 1. Install TamperMonkey [for Chrome](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo)  / [for Firefox](https://addons.mozilla.org/en-US/firefox/addon/tampermonkey/) or [Greasemonkey for FF](https://addons.mozilla.org/en-US/firefox/addon/greasemonkey/)
-2. Click to [install](https://github.com/geisterfurz007/FoodEdit/raw/master/WaffleEdits.user.js)
+2. Click to [install](https://github.com/geisterfurz007/EcosiaToGoogle/raw/master/EcosiaToGoogle.user.js)
 3. Tampermonkey/Greasemonkey should open up and give you the option to install the extension
 
 ## How to use it?
