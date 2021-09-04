@@ -8,29 +8,27 @@
 // @match        https://ecosia.org/search*
 // @grant        none
 // ==/UserScript==
+'use strict';
 
-(function() {
-    'use strict';
-
-    const searchBarParent = document.querySelector(".search-box").parentElement;
-    
-    const div = document.createElement("div");
-    div.classList.add("col-lg-2");
-    
-    const a = document.createElement("a");
+const injectButton = () => {
     const urlRegex = /https.*?search\?.*?(q=.*)/
     const query = window.location.toString().match(urlRegex)[1];
-    a.href = "https://google.com/search?" + query;
-    a.classList.add("btn", "btn-primary");
-    a.style = "margin-top: 1px;";
-    a.id = "MongoBohne";
-    a.innerText = "Link to Google";
 
-    div.appendChild(a);
-    
-    const reference = searchBarParent.parentElement.children[2];
-    searchBarParent.parentElement.insertBefore(div, reference);
-    
-    // searchBarParent.parentElement.appendChild(div);
-    
-})();
+    const reference = document.querySelector(".main-header__install-cta");
+    const navBar = reference.parentElement;
+
+    const styleSource = reference.querySelector("a");
+
+    const a = document.createElement("a");
+    for (const {name, value} of styleSource.attributes) {
+        a.setAttribute(name, value);
+    }
+
+    a.href = "https://google.com/search?" + query;
+    a.innerText = "Link to Google";
+    a.id = "ecosia-to-google-debug";
+
+    navBar.insertBefore(a, reference);
+};
+
+window.onload = injectButton;
