@@ -22,8 +22,4 @@ After installation, search for something with ecosia. It should look a little so
 
 Clicking the "LINK TO GOOGLE" button will bring you right over to google.
 
-## Other stuff
-
-There is a button that requests you to install ecosia to your browser sometimes making the whole thing look weird. I am working on getting that to look nice but the button only randomly shows up for me and doesn't do so always so it's hard to debug. I am on it though!
-
 The userscript uses the URL to create the link. It does not count what's in the search bar. This might be subject to change, it might not be. If you'd like that change, feel free to open an issue!
