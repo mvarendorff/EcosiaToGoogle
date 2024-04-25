@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Ecosia to google.
 // @namespace    https://github.com/geisterfurz007
-// @version      1.1
+// @version      1.2
 // @description  Link to google with the same search from Ecosia.
 // @author       geisterfurz007
 // @match        https://www.ecosia.org/search*
@@ -18,7 +18,7 @@ const injectButton = () => {
     const urlRegex = /https.*?search\?.*?(q=.*)/
     const query = window.location.toString().match(urlRegex)[1];
 
-    const reference = document.querySelector(".main-header__install-cta") || document.querySelector(".personal-counter").parentElement;
+    const reference = document.querySelector(".main-header__space") || document.querySelector(".main-header__install-cta") || document.querySelector(".personal-counter").parentElement;
     const navBar = reference.parentElement;
 
     const styleSource = document.querySelector(".personal-counter button");
