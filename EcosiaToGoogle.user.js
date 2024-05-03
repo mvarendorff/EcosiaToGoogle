@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Ecosia to google.
 // @namespace    https://github.com/geisterfurz007
-// @version      1.2
+// @version      1.3
 // @description  Link to google with the same search from Ecosia.
 // @author       geisterfurz007
 // @match        https://www.ecosia.org/search*
@@ -21,7 +21,7 @@ const injectButton = () => {
     const reference = document.querySelector(".main-header__space") || document.querySelector(".main-header__install-cta") || document.querySelector(".personal-counter").parentElement;
     const navBar = reference.parentElement;
 
-    const styleSource = document.querySelector(".personal-counter button");
+    const styleSource = document.querySelector(".personal-counter button") || document.querySelector(".personal-counter-interim button");
 
     const a = document.createElement("a");
     for (const {name, value} of styleSource.attributes) {
@@ -31,6 +31,7 @@ const injectButton = () => {
     a.href = "https://google.com/search?" + query;
     a.innerText = "Link to Google";
     a.id = elementId;
+    a.style.width = "unset";
 
     console.log('Inserting button');
     navBar.insertBefore(a, reference);
